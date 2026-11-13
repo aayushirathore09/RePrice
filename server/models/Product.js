@@ -9,6 +9,8 @@ const productSchema = new mongoose.Schema({
   usage: String,
   warranty: String,
   sellerRating: Number,
+  sellerName: String,
+  sellerContact: String,
 })
 
 export default mongoose.model('Product', productSchema)
