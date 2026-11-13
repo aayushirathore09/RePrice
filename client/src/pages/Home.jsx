@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { API_URL } from '../config'
 import ProductCard from '../components/ProductCard'
 
 export default function Home() {
