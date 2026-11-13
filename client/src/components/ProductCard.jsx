@@ -42,6 +42,23 @@ export default function ProductCard({ p }) {
         <p>Used for: <b className="text-ink">{p.usage}</b></p>
         <p>Seller rating: <b className="text-ink">⭐ {p.sellerRating}</b></p>
       </div>
+
+      {(p.sellerName || p.sellerContact) && (
+        <div className="mt-3 flex items-center justify-between rounded-xl bg-bg p-3">
+          <div>
+            <p className="text-xs text-muted">Sold by</p>
+            <p className="text-sm font-semibold text-ink">{p.sellerName || 'Seller'}</p>
+          </div>
+          {p.sellerContact && (
+            <a
+              href={`tel:${p.sellerContact.replace(/\s+/g, '')}`}
+              className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:opacity-90"
+            >
+              📞 Call seller
+            </a>
+          )}
+        </div>
+      )}
     </div>
   )
 }
